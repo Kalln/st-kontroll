@@ -1,24 +1,9 @@
 <script lang="ts">
+    import { prcnt } from "$lib/utils";
+
     const SOFT_LIMIT = 30;
     const HARD_LIMIT = 50;
     export let exData: Map<number, number>;
-    export let warningvalue: number = 0;
-
-    function Setwarning(level: number) {
-        if (level > warningvalue) {
-            warningvalue = level;
-            console.log("Changed value: " + warningvalue);
-        }
-    }
-
-
-const prcnt = (num: number | undefined, total: number | undefined): number => {
-    if (!num || !total) return (0);
-    let result = Number(((num / total) * 100).toFixed(2));
-    Setwarning(result);
-    return result;
-}
-
 
 </script>
 
